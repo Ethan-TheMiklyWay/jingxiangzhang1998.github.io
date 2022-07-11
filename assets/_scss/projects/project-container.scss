@@ -27,8 +27,8 @@
 }
 
 .project-container {
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 0;
+  margin-right: 0;
   padding-top: 0;
   padding-bottom: 0;
   margin-bottom: 10px;
@@ -44,6 +44,7 @@
 }
 
 .project-container .project-img img {
+  margin: 5%;
   border-radius: 10px;
   min-height: 140px;
   min-width: 140px;
@@ -121,7 +122,7 @@
 /* date */
 .project-container .project-header > .meta-container > p.date {
   text-align: left;
-  width: 35%;
+  width: 65%;
   color: var(--project-date-text-color);
 }
 

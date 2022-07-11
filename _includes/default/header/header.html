@@ -26,10 +26,7 @@
 {%- endif -%}
 
 {%-comment-%} Standard icons {%-endcomment%}
-<link rel="shortcut icon" href="{{ site.baseurl }}/assets/img/favicons/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/img/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/img/favicons/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png"  href="{{ site.baseurl }}/assets/img/favicons/favicon.jpg">
 
 {%- if page.search_engine_exclude == true %}
   {%-comment-%} follow because all pages have navigation (links) {%-endcomment-%}
@@ -59,8 +56,8 @@
     <meta name="keywords" content="{{ meta_keywords | join: ', ' }}">
   {%- endif %}
 
-  <meta name="description" content="{{ meta_desc | truncate: 150 }}">
-  <meta name="robots" content="index, follow">
+  
+
 
   {%- if site.data.conf.main.meta.twitter_card %}
     {%- include default/header/meta-twitter.html %}

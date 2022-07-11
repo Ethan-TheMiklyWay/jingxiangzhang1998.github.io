@@ -16,10 +16,11 @@
 
 {%- comment %} add buttons {% endcomment -%}
 {%- for button in site.data.conf.main.side_and_top_nav_buttons -%}
+  
   {%- assign button_key = button | first | first %}
   {%- comment %} get page with layout {% endcomment -%}
   {%- assign _pages = lng_pages | where_exp: "item", "item.layout == button_key" -%}
-
+  
   {%- comment %} to avoid multiple post-list pages {% endcomment -%}
   {%- if site.paginate > 0 and button_key == "post-list" and _pages.size > 1 -%}
     {%- assign _tmp_page = _pages[0] -%}
@@ -29,6 +30,7 @@
   {%-endif-%}
 
   {%- for _page in _pages -%}
+    
     {%- comment %} clear values {% endcomment -%}
     {%- assign icon_tag = '' -%}{%- assign active_class = '' -%}{%- assign active_style = '' -%}
 

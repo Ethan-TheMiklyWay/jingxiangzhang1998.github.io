@@ -46,7 +46,8 @@ layout: default
   <div class="row">
     <div class="col-md-12">
       <div class="about-msg markdown-style">
-        {{ content }}
+        <h3 id="hello"> {{ site.data.owner[lng].aboutpage_title }} </h3>
+        <p> {{ site.data.owner[lng].aboutpage_introduction }} </p>
       </div>
     </div>
   </div>

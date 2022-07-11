@@ -2,7 +2,7 @@
 
 home:
   # enables new posts
-  new_posts: true
+  new_posts: false
   # to remove limit, please comment it
   new_posts_count_limit: 3
   # header image using img tag with different scaling.
@@ -14,7 +14,7 @@ about:
   # make sure email address is defined in _data/owner/[language].yml
   show_email: false
   # make sure contacts is defined in _data/owner/[language].yml
-  show_contacts: true
+  show_contacts: false
   # to disable icon, comment below
   #sub_title_icon: "fa fa-star"
   # to disable icon, comment below

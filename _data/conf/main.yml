@@ -2,13 +2,12 @@
 #               General
 ###########################################################
 # if this is true, resources are loaded from cdn (if available), otherwise they are loaded from site base.
-use_cdn_resources_if_available: true
-
+use_cdn_resources_if_available: false
 ###########################################################
 #               Font
 ###########################################################
 # if you want to load in css, change to false. (true is recommended(faster))
-google_font_load_in_head: true
+google_font_load_in_head: false
 google_font_style_url: https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap
 google_font_precon_url: https://fonts.gstatic.com
 
@@ -21,7 +20,7 @@ default_lng: en
 # to prevent adding languages with no folder
 # single language disables language switch
 # language order is linked to array order
-language_switch_lang_list: [en, ja]
+language_switch_lang_list: [en, cn]
 
 # if the opened page is not in the user's language list,
 # suggest language(s) matching with the one(s) in browser language list and user language list.
@@ -40,7 +39,7 @@ language_translation_offer_slide: slideBoxTopToDown
 html_lng_with_country_code: true
 
 # this adds hover effect to language switch
-language_switch_hover_effect: "hover-effect"
+# language_switch_hover_effect: "hover-effect"
 
 # this enables top nav language switch
 language_switch_top_nav: false
@@ -62,7 +61,7 @@ sample_replace: "$site_sample"
 ###########################################################
 # to enable search feature, set to true
 # if you disable this feature, you don't need search.json file so please open the file and uncomment the "published: false"
-search_enable: true
+# search_enable: true
 
 # if this is true, search list hides with mouse leave event
 # if this is false, search list hides with mouse click event
@@ -114,7 +113,7 @@ image_lazy_loader_posts: true
 #                Color scheme switch
 ###########################################################
 # this adds dark color schemes (set to false to disable this feature. This disables all dark styles)
-color_scheme_dark: true
+color_scheme_dark: false
 
 # this sets default color scheme to dark. (color_scheme_dark must be enabled)
 # page start will be dark color scheme. You can change color scheme using switches
@@ -145,13 +144,13 @@ color_scheme_switch_top_nav_hover_effect: "hover-effect"
 #                Scroll back to top
 ###########################################################
 # when you scroll down the page, this button allows you to scroll back to top of the page
-scroll_back_to_top_button: true
+scroll_back_to_top_button: false
 
 ###########################################################
 #                Footer Text
 ###########################################################
 # this enables side navigation bar footer
-side_nav_footer: true
+side_nav_footer: false
 
 # this enables footer text to the bottom of the page
 main_footer: true
@@ -169,10 +168,10 @@ main_footer_centered: true
 side_and_top_nav_button_icons: true
 
 # this adds hover effect to top nav menu buttons
-top_nav_buttons_hover_effect: "hover-effect"
+# top_nav_buttons_hover_effect: "hover-effect"
 
 # this adds hover effect to side nav menu buttons
-side_nav_buttons_hover_effect: "hover-effect"
+# side_nav_buttons_hover_effect: "hover-effect"
 
 # 767px, 850px (nil will set to 767px)
 side_nav_close_limit: 767px
@@ -184,13 +183,13 @@ side_and_top_nav_buttons:
   - home:
     icon: "fa fa-home"
   - post-list:
-    icon: "fa fa-pencil-square-o"
-  - archives:
-    icon: "fa fa-archive"
-  - projects:
     icon: "fa fa-cog"
-  - links:
-    icon: "fa fa-link"
+#  - archives:
+#    icon: "fa fa-archive"
+  - projects:
+    icon: "fa fa-archive"
+#  - links:
+#    icon: "fa fa-link"
   - about:
     icon: "fa fa-user-o"
 
@@ -209,10 +208,10 @@ top_nav_brand_text_enable: true
 
 # set profile image
 # comment to disable the profile image
-side_nav_profile_img_path: /assets/img/posts/post_pic1.jpg
+side_nav_profile_img_path: /assets/img/posts/profile.jpg
 
 # this adds hover effect to bottom buttons
-side_nav_bottom_buttons_hover_effect: "hover-effect"
+# side_nav_bottom_buttons_hover_effect: "hover-effect"
 
 ###########################################################
 #                Contact options on Side nav
@@ -238,7 +237,7 @@ copyright_add_text_to_end: false
 
 # this will add creative commons license. check _data/owner/[language].yml for license type.
 creative_commons:
-  enable: true
+  enable: false
   tooltip: true
   add_all_icons: true
   license_url: "https://creativecommons.org/licenses/$license/4.0/deed.$lng"
@@ -250,16 +249,16 @@ creative_commons:
 ###########################################################
 meta:
   # if you enabled add_hreflang in sitemap.xml, make this false. (According to SEO pros, prevent using both. )
-  hreflang: true
+  hreflang: false
   # add published date and modified date
   add_meta_date: false
   # please note that google does not use keywords, but other search engines may.
-  keywords: true
+  keywords: false
   google_site_verify: false
-  twitter_card: true
-  open_graph: true
+  twitter_card: false
+  open_graph: false
   open_graph_locale: true
-  schema_markup: true
+  schema_markup: false
   # use base url with languages suffixes.
   schema_markup_base_url_with_lang: true
   # organization, person, "" (set to "" to disable) (this will be only added to index.html)
@@ -282,7 +281,7 @@ meta:
   schema_markup_logo_img: /assets/img/favicons/apple-touch-icon.png
   schema_markup_about_img: /assets/img/about/about.jpg
   schema_markup_default_meta_img: /assets/img/about/about.jpg
-  mobile_app: true
+  mobile_app: false
   android_mobile_app: true
   ios_mobile_app: true
   ios_ios_mobile_app_link_fix: false
@@ -305,7 +304,7 @@ google:
 # make sure google_analytics_id is set in _data/owner/[language].yml
 # make sure your environment does not match with google.analytics.ignore
 cookie_consent:
-  enable: true
+  enable: false
   # if this is true, the consent box will be hidden even if the user does not change the switch position.
   hide_consent_bar_with_save_button: true
   gtag_default_config:

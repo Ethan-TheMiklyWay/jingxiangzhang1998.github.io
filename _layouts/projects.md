@@ -18,19 +18,6 @@ layout: default
   {%- capture project_container_style -%} style="background-color:{{ project_data.main.back_color }};" {%- endcapture -%}
 {%- endif %}
 
-<div class="multipurpose-container project-heading-container" {{project_container_style}}>
-{%- assign color_style = nil -%}
-{%- if project_data.main.text_color -%}
-  {%- capture color_style -%} style="color:{{ project_data.main.text_color }};" {%-endcapture-%}
-{%- endif %}
-  <h1 {{ color_style }}>{{ project_data.main.header | default: "Projects" }}</h1>
-  <p {{ color_style }}>{{ project_data.main.info | default: "No data, check page_data in [language]/tabs/projects.md front matter or _data/content/projects/[language].yml" }}</p>
-  <div class="multipurpose-button-wrapper">
-  {% for category in project_data.category %}
-    <a href="#{{ category.type }}" role="button" class="multipurpose-button project-buttons" style="background-color:{{ category.color }};">{{ category.title }}</a>
-  {% endfor %}
-  </div>
-</div>
 
 {% for category in project_data.category -%}
   {%- capture first_category_id -%} id="{{ category.type }}" {%-endcapture-%}
@@ -53,10 +40,17 @@ layout: default
         {%- endif %}
         <div class="col-md-9 project-header">
           <h1>{{ list.project_name }}</h1><h4>{{ list.project_excerpt }}</h4>
+          {% if list.date -%}
           <div class="meta-container">
-            <p class="date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;{{ list.date | date: site.data.lang[lng].date.long }}</p>
-            <p class="category">#{{ category.title }}</p>
+            <p class="date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;
+              {{ list.date | date: site.data.lang[lng].date.long }}
+              {% if list.to_date -%}
+              - {{ list.to_date | date: site.data.lang[lng].date.long }}
+              {%- endif %}
+            </p>
           </div>
+           {%- endif %}
+
           <hr>
           <a href="javascript:void(0);" class="read-more-less">
             <div class="read-more"><i class="fa fa-angle-double-down fa-fw" aria-hidden="true"></i>{{ site.data.lang[lng].projects.read_more_text }}</div>

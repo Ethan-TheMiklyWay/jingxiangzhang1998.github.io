@@ -2,7 +2,7 @@
 # Owner's Personal Information
 ###########################################################
 # This is your brand name
-brand: "Your Brand"
+brand: "Jingxiang Zhang"
 
 # text below the brand name
 brand_sub_text: "$site_sample"
@@ -13,13 +13,13 @@ name: "Your Name"
 # home page top header texts
 home:
   # you can also use $site_brand, $site_greetings, $site_welcome in line1 and line2 for replacing texts.
-  top_header_line1: "$site_welcome"
+  top_header_line1: "Welcome To"
   # if commented, top header will be a single line
-  top_header_line2: "$site_brand"
+  top_header_line2: "Jingxiang Zhang's Website"
 
 # about page sub title
 about:
-  sub_title: "$site_sample"
+  sub_title: "The steps you take don't have to be big, they just need to take you in the right direction."
 
 # if you don't want to add copyright year, comment or leave it blank.
 # the year during which the claimed copyright for the work was first asserted.
@@ -48,9 +48,9 @@ meta_common_description: "Your meta description."
 # the order of the items will be shown as here.
 # comment to remove any contact item
 contacts:
-  #- github: ""
-  #- email: ""
-  #- linkedin: ""
+  - github: ""
+  - email: ""
+  - linkedin: ""
   #- twitter: ""
   #- instagram: ""
   #- youtube: ""
@@ -69,3 +69,9 @@ google_analytics_id: ""
 # make sure you set meta.google_site_verify: true in _data/conf/main.yml
 # make sure your environment does not match with google.site_verification.ignore in _data/conf/main.yml
 google_site_verification: ""
+
+homepage_title: "Introduction"
+homepage_introduction: "A prospective software developer in the Computer Science field, passion motivated, and goal-oriented, I am seeking a summer internship opportunity where my advanced skills, education, research experience can be fully utilized. "
+
+# aboutpage_title: "Resume"
+aboutpage_introduction: ""

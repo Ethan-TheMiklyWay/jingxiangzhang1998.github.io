@@ -37,7 +37,11 @@ img: ":home-heading.jpg"
 
 {%- comment -%} Please delete below and place your page content here {%- endcomment -%}
 
-{%- include util/auto-content-generator.liquid -%}
-{{ website_info_text_first }}
+{%- include multi_lng/get-lng-by-url.liquid url = page.url -%}
+{%- assign lng = get_lng -%}
+<h3 id="hello"> {{ site.data.owner[lng].homepage_title }}</h3>
+<p> {{ site.data.owner[lng].homepage_introduction }} </p>
 
-{{ website_info_text_second }}
+
+
+

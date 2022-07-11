@@ -1,0 +1,123 @@
+# you can move this content to front matter of [language]/tabs/projects.md
+###########################################################
+#                Projects Page Data
+###########################################################
+page_data:
+  main:
+    header: "Projects"
+    info: "Your Project page description."
+    text_color: "white"
+    # if you don't want to use background image, comment it. back_color will be activated.
+    img: ":projects-heading.jpg"
+    back_color: "lightblue"
+
+  category:
+    - title: "Example"
+      type: id_example
+      color: "gray"
+    - title: "Picture"
+      type: id_picture
+      color: "#62b462"
+    - title: "Quote"
+      type: id_quote
+      color: "#2FD0ED"
+
+  list:
+    # quote
+    - type: id_quote
+      project_name: "南加大研究生"
+      project_excerpt: "电子信息工程专业，GPA：3.90/4.0（截止目前）"
+      img: ":USC.png"
+      img_title: "USC img"
+      date: "2022-01-10"
+      to_date: "2023-12-10"
+      post: |
+        #### 2022春季学期
+        {:data-align="center"}
+
+
+        | 课程号 | 课程名称 | 学分 | 成绩 |
+        | :------: | :------------------: | :-----: | :----: |
+        | EE-559 | 机器学习I |  4.0  |  A-  |
+        | EE-510 |   线性代数   |  4.0  |  A   |
+        | EE-503 | 概率论 |  4.0  |  A   |
+        {:data-align="center"}
+
+        ***
+        #### 2022秋季学期
+        {:data-align="center"}
+
+        | 课程号 | 课程名称 | 学分 | 成绩 |
+        | :--------: | :---------------------------: | :-------: | :------: |
+        |             |                                |          |        |
+        {:data-align="center"}
+
+    # quote
+    - type: id_quote
+      project_name: "中国农业大学科研助理"
+      project_excerpt: ""
+      img: ":CAU.png"
+      img_title: "CAU img"
+      date: "2021-08-31"
+      to_date: "2021-12-15"
+      post: |
+        - 参与食品安全研究小组，软件开发工作；
+        - 进行系统后端的设计，负责接收与数据处理的工作。
+
+
+    # quote
+    - type: id_quote
+      project_name: "中国农业大学本科生"
+      project_excerpt: "计算机科学与技术专业，GPA：3.72/4.0"
+      img: ":CAU.png"
+      img_title: "CAU img"
+      date: "2017-09-01"
+      to_date: "2021-07-01"
+      post: |
+        #### 通识课程
+        {:data-align="center"}
+
+
+        | 数学学科 | 物理学科 | 化学学科 |
+        | :----------: | :----------: | :----------: |
+        | 高等数学 | 大学物理 | 无机及分析化学 |
+        | 离散数学 | 大学物理实验 | 无机及分析化学实验 |
+        | 线性代数 | 生活中的物理学 | 动物科学的发展与革新 |
+        | 概率论与数理统计 |     |     |
+        {:data-align="center"}
+        
+        ***
+        #### 主要的计算机课程
+        {:data-align="center"}
+
+
+        | 程序设计课程 | 理论课程 | 专业课程 |  | 
+        | :----------: | :----------: | :----------: | :----------: |
+        | C语言程序设计 | 计算机系统导论 | 数据结构 | 计算机网络 |
+        | C++语言程序设计 | 数值计算方法 | 算法设计 | 数字图像处理 |
+        | Python程序设计 | 数字电子技术 | 计算机图形学 | 软件工程 |
+        | Java程序设计 | 模拟电子技术 | 计算机体系结构 | 计算机系统工程 |
+        | C#程序设计 | 多媒体技术 | 数据库原理 |  |
+        | R程序与数据挖掘 | 虚拟现实技术 | 接口技术 |  |
+        |  | 数学建模 | 人工智能 |  |
+        |  | 编译原理 | 操作系统 |  |
+        {:data-align="center"}
+        
+
+
+    # quote
+    - type: id_quote
+      project_name: "其他课程"
+      project_excerpt: "网课"
+      img: ":Coursera.png"
+      img_title: "Coursera img"
+      # date: "2017-09-01"
+      post: |
+        **操作系统引导：** 点击[此处](https://github.com/Jingxiang-Zhang/other_courses/blob/main/Operating%20system%20boot%20details.pdf)查看我的笔记。
+
+        **网络安全：** 点击[此处](https://github.com/Jingxiang-Zhang/other_courses/blob/main/Network%20Security%20Note.pdf)查看我的笔记。
+
+        **信号与系统：** 点击[此处](https://www.bilibili.com/video/BV16E411E7PA)查看课程。
+
+
+        

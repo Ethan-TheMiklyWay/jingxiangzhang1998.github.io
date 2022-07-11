@@ -2,7 +2,7 @@
 # Owner's Personal Information
 ###########################################################
 # This is your brand name
-brand: "Your Brand"
+brand: "张靖祥"
 
 # text below the brand name
 brand_sub_text: "$site_sample"
@@ -13,13 +13,13 @@ name: "Your Name"
 # home page top header texts
 home:
   # you can also use $site_brand, $site_greetings, $site_welcome in line1 and line2 for replacing texts.
-  top_header_line1: "$site_welcome"
+  top_header_line1: "欢迎来到"
   # if commented, top header will be a single line
-  top_header_line2: "$site_brand"
+  top_header_line2: "张靖祥的网站"
 
 # about page sub title
 about:
-  sub_title: "$site_sample"
+  sub_title: "你每次迈出的步伐不必很大，只需在正确的方向上前进即可。"
 
 # if you don't want to add copyright year, comment or leave it blank.
 # the year during which the claimed copyright for the work was first asserted.
@@ -48,9 +48,9 @@ meta_common_description: "Your meta description."
 # the order of the items will be shown as here.
 # comment to remove any contact item
 contacts:
-  #- github: ""
-  #- email: ""
-  #- linkedin: ""
+  - github: ""
+  - email: ""
+  - linkedin: ""
   #- twitter: ""
   #- instagram: ""
   #- youtube: ""
@@ -69,3 +69,9 @@ google_analytics_id: ""
 # make sure you set meta.google_site_verify: true in _data/conf/main.yml
 # make sure your environment does not match with google.site_verification.ignore in _data/conf/main.yml
 google_site_verification: ""
+
+homepage_title: "简介"
+homepage_introduction: "作为一名软件开发人员，我对工作充满激情，并且目标明确。我目前正在寻找一个能充分利用我的才能、研究经验的暑期实习工作。"
+
+# aboutpage_title: "Resume"
+aboutpage_introduction: ""

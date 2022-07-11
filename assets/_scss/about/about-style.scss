@@ -5,8 +5,8 @@
 
 .about-container {
   @include get_scheme(about-style-colors-);
-  margin-top: 15%;
-  margin-left: 5%;
+  margin-top: 0%;
+  margin-left: 0%;
   margin-right: 5%;
   padding: 0;
 }
@@ -21,6 +21,7 @@
 }
 
 .about-container .about-img img {
+  margin: 5%;
   min-height: 140px;
   min-width: 140px;
   max-height: 140px;
