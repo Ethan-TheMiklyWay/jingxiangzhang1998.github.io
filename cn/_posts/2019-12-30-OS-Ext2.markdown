@@ -1,0 +1,189 @@
+---
+lng_pair: UN3_OS
+title: Ext2文件系统设计
+author: 张靖祥
+category: 课程项目
+tags: [C语言, C++]
+img: ":UN_3_OS/ext2.png"
+date: 2019-12-30 00:00:00
+---
+
+### 项目介绍
+
+学习了操作系统课程后，我对文件系统很感兴趣，因此，我花了几周的时间来设计和编写这个文件系统。希望读者在阅读我的代码后，能够对文件系统有一个更好的了解。由于文件系统的复杂性，为了保证效率，<!-- outline-start -->本项目采用c++语言编写，我设计了一个七层的架构来实现所有的功能。<!-- outline-end -->下面是系统架构图。
+
+![七层架构](:UN_3_OS/ext2.png){:data-align="center"}
+
+### 架构分析
+
+#### 1. 物理层
+
+在这一层中，所有的数据以文件的形式存储在Windows文件系统中。因为这是基于Windows操作系统的项目，必须遵循windows系统的规则，因此可以把它类比成一个虚拟磁盘。为了实现功能强大的文件系统，该的文件系统可以动态地改变长度。另外，该项目使用磁盘来存储数据，而不是内存。 
+
+![物理存储](:UN_3_OS/physical_disk.png){:data-align="center"}
+
+每个大磁盘块占用16MB（16 × 1024=16384）的空间。如果内存空间超过阈值，则会动态创建一个大磁盘块（如下图所示）。这16MB的空间总共包含4096个小块（每个小块是4KB），而小磁盘块则是存储数据的基本单位。 
+
+在一个16MB的块中，第一个小块包含磁盘的基本信息（如创建时间），第二个块包含磁盘块使用情况（位图表），并且第二个小块中只使用了前512个字节（4000位），因为4096代表一个大的16MB块中所有可用的小块。如果大的16MB磁盘块是4000的整数倍，比如0000000或0004000，那么这个大块中的第三个小块表示这4000个大磁盘的使用情况（位图表），同理，使用了前500字节。 当一个大的磁盘块已满时，系统会创建一个大磁盘块来扩大虚拟磁盘空间。 
+
+这是该结构的示意图
+
+![虚拟磁盘结构](:UN_3_OS/physical_structure.png){:data-align="center"}
+
+#### 2. 磁盘驱动层
+
+该层用于对虚拟磁盘进行操作（CRUD，包括增删改查）。它提供了一个接口，可以按块号操作磁盘，并能自动对虚拟磁盘扩容，这个类的一些代码段如下所示
+
+```c++
+class DiskPhysical {
+private:
+	DiskInformation __CreateDiskInformation(); 	// return disk information
+	int __FindEmptyFromMap(char* DiskMapBlock);  	// find a empty small disk block by bitmap
+	char* __GetDiskName(int number); 		// transform block number into real block path
+	int __SearchNotExistName();  			// find a name that not exist in the disk block
+public:
+	DiskPhysical() {}
+	char* ReadDisk(unsigned int block_num);  	// read virtual disk by block number
+	void WriteDisk(unsigned int block_num, char* content);	// overwrite a block (overwrite)
+	void CreateDisk();          			// create a new disk block
+	unsigned int SearchEmpty();  			// search a empty disk block
+	void AddToOccupy(unsigned int BlockNumber);  	// set occupy flag into bitmap
+	void DelFromOccupy(unsigned int BlockNumber);//delete a occupy flag
+	unsigned int GetLastDiskNum();
+	DiskInformation getDiskInfo(int diskNum);
+};
+```
+
+#### 3. 缓冲层
+
+这一层是一个缓冲区，以减少磁盘访问的频率。它具有与磁盘驱动器层相同的功能，但它会缓存数据。当再次访问同一个磁盘块时，磁盘缓冲区将使用缓存中的数据，而不是读取磁盘。 
+
+#### 4. FCB层
+
+Ext2文件系统的结构，记录inode和FCB信息，并提供读取FCD的接口。 
+
+这就是ext2 inode的数据结构
+
+```c++
+struct ext2_inode_physical { 		// each inode occupy 30 int size (120 bytes)
+	unsigned int i_ABMS;      	// this 32 bits is:
+	//0~2 bits: file mode. 0 is empty, 1 is directory, 1 is txt file 
+	//3~11bits: authority. same as linux
+	unsigned int i_uid;      	// file user id
+	unsigned int i_size;      	// file size (only support maximum 4GB for a single file)
+	unsigned int i_ctime;     	// create time
+	unsigned int i_mtime;     	// change time 
+	unsigned int blocks;	// the amount of iblock used
+	char i_name[44];
+	// filename, maximum for 38 bytes
+	// 40 byte: whether last node is son or brother
+	// 41 byte: for the last son or brother
+	// 42 byte: for inter son pointer
+	// 43 byte: for inter brother pointer
+	unsigned int i_block[10];  	// data pointer, point to the data block
+	unsigned int i_son_outer;   	// child inode location
+	unsigned int i_brother_outer;	// brother inode location 
+	unsigned int i_last_outer;   	// link back to it parent or right brother
+};
+```
+
+每个inode需要120字节，每个inode使用二叉树的孩子兄弟表示法记录数据结构。因为每个小块是4096字节，所以它只能记录30个FCB信息。每当FCB数大于30的整数倍时，它将需要一个新的4096字节小块来储存FCB。下面是FCB如何包含物理磁盘块的示意图，在第一个磁盘块中有一个根FCB信息，它有第一个根FCB块位置。通过这个链条，可以找到磁盘块中的第一个FCB，并且可以通过孩子兄弟表示法逐个找到系统中的所有文件。
+
+![FCB顶层架构](:UN_3_OS/FCB_top_layer.png){:data-align="center"}
+
+这是inode结构，它有两种指针类型，一种是内部指针，另一种是外部指针。内部指针在连接4096字节块内部的FCB时使用，否则会使用外部指针。注意，一个块中的30个FCB必须在一个目录中，以保证正确性。 
+
+![FCB连接](:UN_3_OS/FCB_link.png){:data-align="center"}
+
+对于文件的数据连接结构，请看下图
+
+![inode中的数据块](:UN_3_OS/data_block.png){:data-align="center"}
+
+#### 5. 文件驱动层
+
+本层提供了对文件按名操作的接口
+
+本层的一些共有函数信息:
+
+```c++
+class FileStream {
+public:
+	FileStream(int userid);
+	FileStream();
+	fileInfo getRoot();
+	
+	int formatDisk();
+	int getBatchSon(fileInfo* info, int number);
+	int getBatchSon(int num, int offset, fileInfo* info, int length);
+	void getPWD();
+	int cdDirectory(const char* name);
+	void setUid(int uid);
+	int getUid();
+	void depthDeduce();
+	void depthToOne();
+	void getNodeByName(const char* name, unsigned int* num, unsigned int* offset, i_FileMode mode);
+	void showopen();
+
+	int mk(char* name, int aut,i_FileMode mode);
+	void openFile(char* name, fileOpenMode openMode);
+	void closeFile(char* name);
+	void writeFile(char* name, char* content, int length);
+	char* readFile(char* name,int *length);
+	void flush();
+	void seekg(int pos, seek_mode mode);
+	void seekp(int pos, seek_mode mode);
+	void read(char *content, int length);
+
+	void delFile(char* name);
+	void moveFile(char* From, char* To);
+};
+```
+
+#### 6. 操作系统层
+
+该层提供了可以按用户命令进行操作的接口，例如“ls”，“mkdir”等等
+
+该层的一些代码片段:
+
+```c++
+class Command {
+private:
+	FileStream filestream;
+	void __changeColor(i_FileMode mode);
+	int uid;
+public:
+	Command();
+	int login();
+	int execute(char *command);
+	void showPWD();
+	int list(const char* method);
+	int mkdir(char *name, const char *authority);
+	int cd(const char *name);
+	int del(const char* name);
+	int open(const char*mode, const char* name);
+	int write(const char* name, const char* content);
+	int close(const char* name);
+	int read(const char* name);
+	int showopen();
+};
+```
+
+#### 7. 最顶层
+
+主函数层，用于等待用户输入，并调用命令执行函数
+
+### 项目展示
+
+登录系统（用户名密码都是root）
+
+![登录](:UN_3_OS/login.png){:data-align="center"}
+
+系统初始化（创建空的虚拟磁盘块）
+
+![初始化](:UN_3_OS/init.png){:data-align="center"}
+
+执行一些基本命令
+
+![命令执行](:UN_3_OS/command.png){:data-align="center"}
+
+点击[此处](https://github.com/Jingxiang-Zhang/Ext2_file_system_design)下载该项目。
