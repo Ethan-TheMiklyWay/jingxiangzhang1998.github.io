@@ -3,7 +3,7 @@ lng_pair: UN2_AM
 title: Agricultural Modeling
 author: Jingxiang Zhang
 category: Competition
-tags: [Mathematics, C Language]
+tags: [Mathematics, C/C++]
 img: ":UN_2_AM/profile.gif"
 date: 2019-06-15 00:00:00
 ---

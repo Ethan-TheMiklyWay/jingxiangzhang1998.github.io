@@ -3,7 +3,7 @@ lng_pair: UN2_CA_V
 title: Single Cycle CPU Design Based on MIPS and Vivado
 author: Jingxiang Zhang
 category: Course Project
-tags: [Computer Architecture]
+tags: [Architecture]
 img: ":UN_2_CA_V/Databus.png"
 date: 2019-08-20 00:00:00
 ---

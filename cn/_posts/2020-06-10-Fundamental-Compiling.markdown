@@ -3,7 +3,7 @@ lng_pair: UN3_FC
 title: PY0语言设计
 author: 张靖祥
 category: 课程项目
-tags: [C, C++]
+tags: [C/C++]
 img: ":UN_3_FC/demonstration.gif"
 date: 2020-06-10 00:00:00
 ---

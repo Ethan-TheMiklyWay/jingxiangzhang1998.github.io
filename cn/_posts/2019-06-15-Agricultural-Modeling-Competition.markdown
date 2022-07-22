@@ -3,7 +3,7 @@ lng_pair: UN2_AM
 title: 农建大赛
 author: 张靖祥
 category: 竞赛
-tags: [数学, C语言]
+tags: [数学, C/C++]
 img: ":UN_2_AM/profile.gif"
 date: 2019-06-15 00:00:00
 ---

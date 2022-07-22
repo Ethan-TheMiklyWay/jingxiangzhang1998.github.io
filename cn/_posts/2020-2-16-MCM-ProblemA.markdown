@@ -3,7 +3,7 @@ lng_pair: UN3_MCM
 title: 美国大学生数学建模竞赛
 author: 张靖祥
 category: 竞赛
-tags: [Python]
+tags: [Python, 数学]
 img: ":UN_3_MCM/ocean.gif"
 date: 2020-02-16 00:00:00
 ---

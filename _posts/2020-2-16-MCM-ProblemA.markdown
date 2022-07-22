@@ -3,7 +3,7 @@ lng_pair: UN3_MCM
 title: Mathematical Contest in Modeling
 author: Jingxiang Zhang
 category: Competition
-tags: [Python]
+tags: [Python, Mathematics]
 img: ":UN_3_MCM/ocean.gif"
 date: 2020-02-16 00:00:00
 ---

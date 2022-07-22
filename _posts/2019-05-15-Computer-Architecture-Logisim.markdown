@@ -3,7 +3,7 @@ lng_pair: UN2_CA
 title: Designs Multi-cycle CPU by Logisim 
 author: Jingxiang Zhang
 category: Course Project
-tags: [Computer Architecture]
+tags: [Architecture]
 img: ":UN_2_CA/show.gif"
 date: 2019-05-15 00:00:00
 ---

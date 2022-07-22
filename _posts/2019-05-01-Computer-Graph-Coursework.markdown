@@ -3,7 +3,7 @@ lng_pair: UN2_CG
 title: Computer Graphics Course Project
 author: Jingxiang Zhang
 category: Course Project
-tags: [Computer Graphics, C Language]
+tags: [Graphics, C/C++]
 img: ":UN_2_CG/project3.gif"
 date: 2019-05-01 00:00:00
 ---

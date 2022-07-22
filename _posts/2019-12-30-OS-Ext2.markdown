@@ -3,7 +3,7 @@ lng_pair: UN3_OS
 title: Ext2 File System Design
 author: Jingxiang Zhang
 category: Course Project
-tags: [C Language, C++]
+tags: [C/C++]
 img: ":UN_3_OS/ext2.png"
 date: 2019-12-30 00:00:00
 ---
