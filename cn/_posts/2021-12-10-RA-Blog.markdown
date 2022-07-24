@@ -1,0 +1,96 @@
+---
+lng_pair: RA2021
+title: 基于Flask的博客网站设计
+author: 张靖祥
+category: 工作
+tags: [Python, 全栈开发]
+img: ":RA2021/new_post.png"
+date: 2021-12-10 00:00:00
+---
+
+### 项目介绍
+
+这个项目是我作为研究助理(RA)的工作。它是<!-- outline-start -->一个博客框架，由Python、Flask编写。<!-- outline-end -->我的导师允许我公开这个项目，同时这个项目没有关于我研究小组的信息。
+
+我的研究小组正在研究食品安全问题，每个学生都有不同的工作，其中包括生物专业的学生进行细菌检测，EE专业的学生进行数据采集和传输，而我的工作是后端开发。所以，我的工作就是设计一个数据接收、处理和展示平台，一个类似博客的系统。
+
+
+我的项目有以下几个特色：
+
+- 完整的框架设计，MVC架构
+- 高安全性:
+  - 动态验证表单输入，防止XSS攻击
+  - 按模型操作数据库，防范SQL注入
+  - 上传文件验证，防止文件上传攻击
+  - 安全的密码保护和动态令牌管理系统，防止CSRF攻击
+  - 动态生成网页，预防文件包含漏洞
+  - 角色登录检测和授权管理，防止未授权访问
+  - HTTP secure（HTTPs）的支持，但需要申请一个密钥
+- 简单的数据库管理
+  - 监控数据库执行状态，提供超时信息
+  - 测试数据生成
+  - 将数据模型导出到数据库，数据库迁移
+  - 创建初始化配置文件
+- 性能优化
+  - 通过base64批量加载小图标
+  - 通过ajax加载异步数据
+  - 多媒体数据采用hash路径存储
+- 错误处理系统
+- 邮件发送功能
+- 支持多版本的API接口
+
+可扩展功能（尚未实现）:
+- 限流器，预防DDOS攻击
+- 多语言支持
+
+请阅读[项目手册](https://github.com/Jingxiang-Zhang/Blog_Flask_Design/blob/main/manual.pdf)，获取更加详细的框架讲解。
+
+### 项目展示
+
+#### 项目架构
+
+ER图:
+
+![ER图](:RA2021/ER.png){:data-align="center"}
+
+网站访问执行过程:
+
+![执行过程](:RA2021/structure.png){:data-align="center"}
+
+#### 登录之前
+
+博客首页：
+
+![博客首页](:RA2021/frontpage.png){:data-align="center"}
+
+评论功能：
+
+![评论功能](:RA2021/comment.png){:data-align="center"}
+
+点击用户头像进入用户主页：
+
+![用户主页](:RA2021/personal_page.png){:data-align="center"}
+
+点击查看用户的关注者与粉丝
+
+![粉丝列表](:RA2021/followed.png){:data-align="center"}
+
+#### 以管理员身份登录
+
+用户登录:
+
+![用户登录](:RA2021/login.png){:data-align="center"}
+
+你可以编辑其他人的资料：
+
+![编辑资料](:RA2021/edit_profile.png){:data-align="center"}
+
+你也可以编辑其他人发布的评论：
+
+![管理员的首页](:RA2021/root_frontpage.png){:data-align="center"}
+
+每个人都可以发布内容：
+
+![新的发布](:RA2021/new_post.png){:data-align="center"}
+
+点击[此次](https://github.com/Jingxiang-Zhang/Blog_Flask_Design)获取项目源代码。

@@ -1,0 +1,95 @@
+---
+lng_pair: RA2021
+title: Blog Design Based on Flask
+author: Jingxiang Zhang
+category: Work
+tags: [Python, Full Stack]
+img: ":RA2021/new_post.png"
+date: 2021-12-10 00:00:00
+---
+
+### Introduction
+
+This project was my work as a research assistant (RA). <!-- outline-start -->It is a blog framework, programmed by Python, Flask.<!-- outline-end --> My mentor gave me the permission to publicize this project, which has no private information about my group.
+
+My research group is working on food security. Each student in our group research on different part of job, which include bacterial detection by biological major student, data acquisition and transmission by EE major student, back-end design by myself. So, my work is to design a data receiving, processing, and showing platform, which is a blog like system.
+
+My project has the following feature:
+
+- A complete program framework, and MVC (Model-View-Controller) framework
+- High security:
+  - Dynamically validate form input, prevent XSS attack
+  - Operate Database by model, defense SQL injection
+  - Test upload file, defense file uploading attack
+  - Secure password and dynamic token management system, prevent CSRF attack
+  - Dynamic web page generation, prevent file inclusion vulnerability
+  - Login detection and authorization management by role, prevent unauthorized access
+  - HTTP secure (HTTPs) support, but you will need to apply for a secret key
+- Easy database management
+  - Monitor database execution status, giving timeout information
+  - Test data generate
+  - Export data model to database, and database migration
+  - Create initial configuration file
+- Performance optimization
+  - Load small Icons in batches by base64
+  - Asynchronous data loading by ajax 
+  - Multimedia data is stored by using hash paths
+- Error handling system
+- Email sending function
+- API interface with multi-version support
+
+Extendable Function (not implemented):
+- Limit control, to prevent DDOS attack
+- Multi language support
+
+To understand the full edition of the project structure illustration, please read the [manual](https://github.com/Jingxiang-Zhang/Blog_Flask_Design/blob/main/manual.pdf).
+
+### Demonstration
+
+#### Project Structure
+
+ER diagram:
+
+![ER diagram](:RA2021/ER.png){:data-align="center"}
+
+Web access process:
+
+![access process](:RA2021/structure.png){:data-align="center"}
+
+#### Before Login
+
+Blog frontpage:
+
+![frontpage](:RA2021/frontpage.png){:data-align="center"}
+
+Comments of the post:
+
+![comments](:RA2021/comment.png){:data-align="center"}
+
+Click user avatar to get in the personal page:
+
+![personal page](:RA2021/personal_page.png){:data-align="center"}
+
+Check the follower and followed of user:
+
+![followed](:RA2021/followed.png){:data-align="center"}
+
+#### Login as Administrator
+
+User login:
+
+![user login](:RA2021/login.png){:data-align="center"}
+
+You can edit other person's profile
+
+![edit profile](:RA2021/edit_profile.png){:data-align="center"}
+
+You can also edit other user's post
+
+![root frontpage](:RA2021/root_frontpage.png){:data-align="center"}
+
+Everyone can put a new post.
+
+![new post](:RA2021/new_post.png){:data-align="center"}
+
+To reach the code of this project, please click [here](https://github.com/Jingxiang-Zhang/Blog_Flask_Design).
