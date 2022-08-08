@@ -36,11 +36,16 @@ My project has the following feature:
   - Multimedia data is stored by using hash paths
 - Error handling system
 - Email sending function
-- API interface with multi-version support
+- RESTful API with multi-version support
 
 Extendable Function (not implemented):
 - Limit control, to prevent DDOS attack
 - Multi language support
+
+Project directory:
+
+![Project directory](:RA2021/project.png){:data-align="center"}
+
 
 To understand the full edition of the project structure illustration, please read the [manual](https://github.com/Jingxiang-Zhang/Blog_Flask_Design/blob/main/manual.pdf).
 

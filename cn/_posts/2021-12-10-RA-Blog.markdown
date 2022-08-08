@@ -37,11 +37,15 @@ date: 2021-12-10 00:00:00
   - 多媒体数据采用hash路径存储
 - 错误处理系统
 - 邮件发送功能
-- 支持多版本的API接口
+- RESTful API接口设计
 
 可扩展功能（尚未实现）:
 - 限流器，预防DDOS攻击
 - 多语言支持
+
+项目目录：
+
+![Project directory](:RA2021/project.png){:data-align="center"}
 
 请阅读[项目手册](https://github.com/Jingxiang-Zhang/Blog_Flask_Design/blob/main/manual.pdf)，获取更加详细的框架讲解。
 
