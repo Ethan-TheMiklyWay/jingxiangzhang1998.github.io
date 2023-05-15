@@ -3,7 +3,7 @@ lng_pair: UN2_CG
 title: 计算机图形学课程项目
 author: 张靖祥
 category: 课程项目
-tags: [图形类, C/C++]
+tags: [图形学, C/C++]
 img: ":UN_2_CG/project3.gif"
 date: 2019-05-01 00:00:00
 ---
