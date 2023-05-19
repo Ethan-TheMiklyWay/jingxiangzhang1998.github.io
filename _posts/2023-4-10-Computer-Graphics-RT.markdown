@@ -10,7 +10,7 @@ date: 2023-4-10 00:00:00
 
 ### Ray tracing render project
 
-This is the third homework of the computer graphics course. In this project, I will render the model by backward ray tracing. The input is a group of geometries, and the output is the rendering image. There are two modes:
+<!-- outline-start -->This is the third homework of the computer graphics course. In this project, I will render the model by backward ray tracing. The input is a group of geometries, and the output is the rendering image.<!-- outline-end --> There are two modes:
 
 1. point light source: 
 

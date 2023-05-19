@@ -10,7 +10,7 @@ date: 2023-3-01 00:00:00
 
 ## Terran render project
 
-This is the first homework of the computer graphics course. In this project, I will render the Terran by OpenGL. The input height map is a gray scale image, and each pixel of the image stand for the height of the Terran. 
+<!-- outline-start -->This is the first homework of the computer graphics course. In this project, I will render the Terran by OpenGL. The input height map is a gray scale image, and each pixel of the image stand for the height of the Terran. <!-- outline-end -->
 
 For example, given the following input:
 

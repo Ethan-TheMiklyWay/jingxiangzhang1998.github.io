@@ -10,7 +10,7 @@ date: 2023-3-01 00:00:00
 
 ### Roller coaster render project
 
-This is the second homework of the computer graphics course. In this project, I will render the roller coaster by OpenGL. The input is a group of points position, and I will use spline interpolation to create the track, and use OpenGL to render it.
+<!-- outline-start -->This is the second homework of the computer graphics course. In this project, I will render the roller coaster by OpenGL. The input is a group of points position, and I will use spline interpolation to create the track, and use OpenGL to render it.<!-- outline-end -->
 
 The rendering result is:
 
