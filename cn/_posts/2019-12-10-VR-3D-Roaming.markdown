@@ -3,7 +3,7 @@ lng_pair: UN3_VR
 title: Unity VR 3D漫游
 author: 张靖祥
 category: 课程项目
-tags: [C#, Unity]
+tags: [C#, Unity, 图形学]
 img: ":UN_3_VR/project.gif"
 date: 2019-12-10 00:00:00
 ---

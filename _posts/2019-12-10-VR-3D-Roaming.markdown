@@ -3,7 +3,7 @@ lng_pair: UN3_VR
 title: Unity VR 3D Roaming
 author: Jingxiang Zhang
 category: Course Project
-tags: [C#, Unity]
+tags: [C#, Unity, Graphics]
 img: ":UN_3_VR/project.gif"
 date: 2019-12-10 00:00:00
 ---
