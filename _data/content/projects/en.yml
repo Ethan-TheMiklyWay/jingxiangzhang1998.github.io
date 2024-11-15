@@ -25,12 +25,26 @@ page_data:
   list:
     # quote
     - type: id_quote
+      project_name: "Research Assistant in USC Keck School of Medicine"
+      project_excerpt: "Software development and study on luminal water fraction project"
+      img: ":USC.png"
+      img_title: "USC img"
+      date: "2024-03-15"
+      to_date: "Present"
+      post: |
+        - Developed a Slicer3D module installer to enhance usability for researchers and clinicians.
+        - Designed and implemented Multi-Echo Relaxation Analysis software, a comprehensive simulation platform for algorithm optimization and comparison.
+        - Explored deep learning techniques to improve Multi-Echo Relaxation Analysis methods.
+        - Conducted studies on analytic approaches for luminal water fraction estimation in prostate cancer MRI.
+        - Authored and submitted three ISMRM abstracts based on research findings.
+        
+    - type: id_quote
       project_name: "Student Worker in USC Viterbi School of Engineering"
       project_excerpt: "Mainly work for forward raytracing to simulate 5G signal"
       img: ":USC.png"
       img_title: "USC img"
       date: "2022-09-01"
-      to_date: "current"
+      to_date: "2023-12-10"
       post: |
         - Participated in 5G signal modeling and simulation group with professor Molisch.
         - Modeling the 5G signal by forward raytracing in C++.
@@ -41,7 +55,7 @@ page_data:
     # quote
     - type: id_quote
       project_name: "Graduate in USC"
-      project_excerpt: "Major in EE, GPA: 3.94/4.0 (current)"
+      project_excerpt: "Major in EE, GPA: 3.96/4.0"
       img: ":USC.png"
       img_title: "USC img"
       date: "2022-01-10"
@@ -75,11 +89,10 @@ page_data:
 
         | Course | Title | Units | Grade |
         | :--------: | :---------------------------: | :-------: | :------: |
-        | EE-483 | Digital Signal Processing | 4.0 | IP |
-        | CSCI-420 | Computer Graphics | 4.0 | IP |
+        | EE-483 | Digital Signal Processing | 4.0 | A |
+        | CSCI-420 | Computer Graphics | 4.0 | A |
         {:data-align="center"}
 
-        - IP: In Progress.
 
     # quote
     - type: id_quote
