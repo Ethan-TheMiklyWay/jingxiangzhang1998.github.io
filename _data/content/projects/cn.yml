@@ -25,8 +25,8 @@ page_data:
   list:
     # quote
     - type: id_quote
-      project_name: "南加大Viterbi学院学生工作"
-      project_excerpt: "主要研究以前向光线追踪为基础的5G信号模拟"
+      project_name: "南加大Keck学院研究助理"
+      project_excerpt: "管腔水分数项目软件开发与研究"
       img: ":USC.png"
       img_title: "USC img"
       date: "2024-03-15"
