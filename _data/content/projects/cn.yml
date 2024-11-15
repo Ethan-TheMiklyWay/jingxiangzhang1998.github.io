@@ -29,8 +29,24 @@ page_data:
       project_excerpt: "主要研究以前向光线追踪为基础的5G信号模拟"
       img: ":USC.png"
       img_title: "USC img"
-      date: "2022-09-01"
+      date: "2024-03-15"
       to_date: "目前"
+      post: |
+        - 开发了 Slicer3D 模块安装程序，以增强研究人员和临床医生的可用性；
+        - 设计并实现了多回波弛豫分析软件，用于算法优化和比较的综合仿真平台；
+        - 探索深度学习技术来改进多回波弛豫分析方法；
+        - 对前列腺癌 MRI 中腔水分数估计的分析方法进行了研究；
+        - 根据研究结果撰写并提交了三份 ISMRM 摘要。
+        
+  list:
+    # quote
+    - type: id_quote
+      project_name: "南加大Viterbi学院学生工作"
+      project_excerpt: "主要研究以前向光线追踪为基础的5G信号模拟"
+      img: ":USC.png"
+      img_title: "USC img"
+      date: "2022-09-01"
+      to_date: "2023-12-10"
       post: |
         - 参加Molisch教授的5G信号建模与模拟小组；
         - 使用C++，利用前向光线追踪模拟5G信号的传播；
@@ -41,7 +57,7 @@ page_data:
     # quote
     - type: id_quote
       project_name: "南加大研究生"
-      project_excerpt: "电子信息工程专业，GPA：3.94/4.0（截止目前）"
+      project_excerpt: "电子信息工程专业，GPA：3.96/4.0"
       img: ":USC.png"
       img_title: "USC img"
       date: "2022-01-10"
@@ -75,11 +91,10 @@ page_data:
 
         | Course | Title | Units | Grade |
         | :--------: | :---------------------------: | :-------: | :------: |
-        | EE-483 | 数字信号处理 | 4.0 | IP |
-        | CSCI-420 | 计算机图形学 | 4.0 | IP |
+        | EE-483 | 数字信号处理 | 4.0 | A |
+        | CSCI-420 | 计算机图形学 | 4.0 | A |
         {:data-align="center"}
 
-        - IP: 正在进行中。
 
     # quote
     - type: id_quote
