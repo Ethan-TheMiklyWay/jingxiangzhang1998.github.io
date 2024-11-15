@@ -2,4 +2,4 @@ This personal website is powered by [Mr. Green](https://github.com/MrGreensWorks
 
 Click [here](https://jingxiang-zhang.github.io/) to view my personal website.
 
-note of jekyll.docx in this folder show how I modify Mr. Green's theme.
+note of jekyll.docx in this folder show how I modify Mr. Green's theme. 
